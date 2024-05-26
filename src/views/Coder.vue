@@ -6,8 +6,20 @@
 
         <div class="resume-cards">
             <div class="row">
-                <div class="col-md-8">.col-md-8</div>
-                <div class="col-md-4">.col-md-4</div>
+                <div class="col-md-8">
+                    <div class="panel">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -39,5 +51,8 @@
     margin-bottom: 16px;
     resize: vertical;
     background: #D9D9D9;
+}
+.topblack {
+    border-top: black;
 }
 </style>

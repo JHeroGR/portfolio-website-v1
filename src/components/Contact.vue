@@ -5,9 +5,15 @@
       <p>Email: <a href="mailto:jheroytc@gmail.com">jheroytc@gmail.com</a></p>
       <p>Phone: <a href="tel:+9568679183">(956) 867-9183</a></p>
       <form action="">
-        <input type="email" id="email" name="email" placeholder="Email">
-        <input type="text" id="subject" name="subject" placeholder="Subject">
-        <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject">
+        </div>
+        <div class="form-group">
+            <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+        </div>
         <input type="submit" value="Send Email">
       </form>
     </div>
@@ -44,5 +50,8 @@ export default {
 }
 ::placeholder {
   color: black;
+}
+form {
+    padding: 0 10px 0 10px;
 }
 </style>
