@@ -23,7 +23,11 @@ export default {
 
 <style scoped>
 h3 {
-    text-align: center;
+  text-align: center;
+}
+.socials ul {
+  padding: 0;
+  text-align: center;
 }
 .socials li {
   list-style-type: none;
