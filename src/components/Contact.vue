@@ -31,6 +31,8 @@ export default {
 
 <style scoped>
 .contact {
+  background: #9172ff;
+  padding: 10px;
   text-align: center;
 }
 .contact a {
@@ -50,8 +52,5 @@ export default {
 }
 ::placeholder {
   color: black;
-}
-form {
-    padding: 0 10px 0 10px;
 }
 </style>

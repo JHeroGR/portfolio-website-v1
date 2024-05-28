@@ -70,13 +70,11 @@
         <li><a href="https://youtube.com/JHero"><i class="fa fa-youtube-play"></i></a></li>
       </ul>
     </div> -->
-    <Socials />
   </div>
 </template>
 
 <script>
 import Main from './Main.vue'
-import Socials from './Socials.vue'
 import Talents from './Talents.vue'
 import Contact from './Contact.vue'
 import Updates from './Updates.vue'
@@ -89,7 +87,6 @@ export default {
   components: {
     Main,
     Talents,
-    Socials,
     Contact,
     Updates
   }

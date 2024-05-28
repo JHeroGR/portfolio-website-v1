@@ -1,12 +1,21 @@
 <template>
     <div class="main">
         <div class="container">
-            <router-link to="/"><i class="fa fa-angle-left" style="font-size:50px;color:black;"></i></router-link>
+            <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
             <h1>JHero</h1>
             <h3>Gamer</h3>
+
+            <h3>Most Popular Videos</h3>
+
+            <YouTubeVideos />
+            
         </div>
     </div>
 </template>
+
+<script>
+
+</script>
 
 <style scoped>
 .main {

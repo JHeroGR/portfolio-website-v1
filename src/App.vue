@@ -1,15 +1,19 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <router-view />
+  <Socials />
+
 </template>
 
 <script>
 import Home from './components/Home.vue'
+import Socials from './Socials.vue'
 
 export default {
   name: 'App',
   components: {
-    Home
+    Home,
+    Socials,
   },
 }
 

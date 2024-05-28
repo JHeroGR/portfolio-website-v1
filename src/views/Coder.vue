@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <div class="container">
-            <router-link to="/"><i class="fa fa-angle-left" style="font-size:50px;color:black;"></i></router-link>
+            <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
             <h1>JHero</h1>
             <h3>Coder</h3>
 
@@ -170,14 +170,29 @@
     display: inline-block;
     color: black;
 }
-.main .panel-default .panel-heading {
+.main .panel-default {
+    margin: 10px;
+    border: black solid 1px;
+    border-radius: 5px;
+}
+.main .panel-heading {
     background: black;
     color: white;
+    padding: 10px 7px;
+    border-radius: 3px 3px 0 0;
+}
+.main .panel-body {
+    background: white;
+    padding: 10px 7px;
+    border-radius: 0 0 3px 3px;
 }
 .main p {
-    margin-bottom: 0;
+    margin: 0 10px;
 }
 .main #tools ul, .main #lang-and-frames ul {
     margin-bottom: 0;
+}
+.main a {
+    text-decoration: none;
 }
 </style>

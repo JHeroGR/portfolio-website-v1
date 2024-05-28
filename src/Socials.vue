@@ -2,10 +2,10 @@
     <div class="socials">
       <h3>Socials</h3>
       <ul>
-        <li><a href="https://github.com/JHeroGR"><i class="fa fa-github" style="font-size: 30px"></i></a></li>
-        <li><a href="https://twitter.com/JHeroGR"><i class="fa fa-twitter" style="font-size: 30px"></i></a></li>
-        <li><a href="https://twitch.tv/JHeroGR"><i class="fa fa-twitch" style="font-size: 30px"></i></a></li>
-        <li><a href="https://youtube.com/JHero"><i class="fa fa-youtube-play" style="font-size: 30px"></i></a></li>
+        <li><a href="https://github.com/JHeroGR"><i class="bi bi-github"></i></a></li>
+        <li><a href="https://twitter.com/JHeroGR"><i class="bi bi-twitter"></i></a></li>
+        <li><a href="https://twitch.tv/JHeroGR"><i class="bi bi-twitch"></i></a></li>
+        <li><a href="https://youtube.com/JHero"><i class="bi bi-youtube"></i></a></li>
       </ul>
     </div>
 </template>
@@ -24,6 +24,9 @@ export default {
 <style scoped>
 h3 {
   text-align: center;
+}
+.socials {
+  margin: 20px;
 }
 .socials ul {
   padding: 0;
