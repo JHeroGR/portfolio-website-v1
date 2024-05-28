@@ -26,6 +26,8 @@
                                                 Defects or changes in both UI and Database Systems. Using Visual Studio with C#.
                                                 </li>
                                         </ul>
+                                        
+                                        <hr>
 
                                         <p>Edinburg CISD, Technology Internship (December 2018 - October 2019)</p>
                                         <ul>
@@ -35,6 +37,8 @@
                                             <li>Created banners and web page layouts for promotional activities of school companies, including STAAR
                                             and TEA programs, using Adobe Photoshop for image editing and Adobe Illustrator for image creations.</li>
                                         </ul>
+ 
+                                        <hr>
 
                                         <p>The University of Texas Rio Grande Valley, Lab Consultant (June 2018 - August 2018)</p>
                                         <ul>
@@ -42,6 +46,8 @@
                                             <li>Supervised Computer Science Laboratory and mentored students with debugging issues and verifications
                                             in their programming projects.</li>
                                         </ul>
+ 
+                                        <hr>
 
                                         <p>Kemper Insurance, Analyst Developer Intern (August 2017 - March 2018)</p>
                                         <ul>
@@ -63,6 +69,9 @@
                                         <li>Designed mobile version of this Website with Figma</li>
                                         <li>Creating mobile version with VueJS</li>
                                     </ul>
+ 
+                                    <hr>
+
                                     <p>Jojama Properties Website</p>
                                     <ul>
                                         <li>Designing and developing a web app for a real estate company in Python and AWS support for image
@@ -101,6 +110,9 @@
                                         <ul>
                                             <li>Bachelor's of Science In Computer Engineering, University Of Texas - Rio Grande Valley (Class of 2019)</li>
                                         </ul>
+                                         
+                                        <hr>
+
                                         <p>Certifications</p>
                                         <ul>
                                             <li>Foundations of the User Experience (UX) Design, Google-Coursera (February 2024)</li>
