@@ -13,6 +13,7 @@
                                 <div class="panel-heading">Work Experience</div>
                                 <div class="panel-body">
                                     <div>
+
                                         <p>Invoice Cloud, Software Engineer QA/SDET (December 2019 - September 2023)</p>
                                         <ul>
                                             <li>Enhanced, implemented and maintained our own Framework for 100+ scenarios and scripts both manual
@@ -155,6 +156,7 @@
         </div>
     </div>
 </template>
+
 
 <style scoped>
 .main {

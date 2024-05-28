@@ -7,15 +7,15 @@
 
             <h3>Most Popular Videos</h3>
 
-            <YouTubeVideos />
-            
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=bSnTWaJeJ6M"><img src="../assets/thumbnail.jpeg"></a></li>
+                <li><a href="https://www.youtube.com/watch?v=bSnTWaJeJ6M"><img src="../assets/thumbnail.jpeg"></a></li>
+                <li><a href="https://www.youtube.com/watch?v=bSnTWaJeJ6M"><img src="../assets/thumbnail.jpeg"></a></li>
+                <li><a href="https://www.youtube.com/watch?v=bSnTWaJeJ6M"><img src="../assets/thumbnail.jpeg"></a></li>
+            </ul>            
         </div>
     </div>
 </template>
-
-<script>
-
-</script>
 
 <style scoped>
 .main {
@@ -42,5 +42,16 @@ width: 100%;
     background: #D9D9D9;
     display: inline-block;
     color: black;
+}
+.main li {
+    list-style-type: none;
+    padding: 12px;
+    display: block;
+}
+.main li a {
+    margin-left: 50px;
+}
+.main li img {
+    width: 75%;
 }
 </style>
