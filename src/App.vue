@@ -7,7 +7,7 @@
 
 <script>
 import Home from './components/Home.vue'
-import Socials from './Socials.vue'
+import Socials from './views/Socials.vue'
 
 export default {
   name: 'App',
