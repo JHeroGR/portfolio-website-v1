@@ -11,7 +11,8 @@
     "google-auth-library": "^9.10.0",
     "googleapis": "^137.1.0",
     "vue": "^3.2.13",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "vue3-carousel": "^0.3.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",

@@ -4,49 +4,57 @@
             <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
             <h1>JHero</h1>
             <h3>Actor</h3>
-
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../assets/hectorsaturnobueno.png" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Hector "Saturno" Bueno</h5>
-                            <p>Escapando De Las Tinieblas</p>
-                        </div>
+            <carousel :autoplay="5000" :wrap-around="true" :items-to-show="1">
+                <slide v-for="(image, index) in images" :key="index">
+                <div class="carousel__item">
+                    <div class="carousel__slide">
+                    <img :src="require(`@/assets/${image.name}`)" alt="">
                     </div>
-                    <div class="carousel-item">
-                        <img src="../assets/madhatterteaparty.png" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Mad Hatter</h5>
-                            <p>Alicia</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../assets/betotcc.png" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Beto</h5>
-                            <p>A Tejano Christmas Carol</p>
-                        </div>
-                    </div>
+                    <h5>{{ image.description }}</h5>  
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
 
-            <img src="../assets/resume2024.png" alt="Resume">
+                </slide>
+
+                <template #addons>
+                    <navigation />
+                </template>
+            </carousel>
+
+            
+
+            <img class="resume" src="@/assets/resume2024.png" alt="Resume">
 
             <a href="https://resumes.actorsaccess.com/JHeroYT" class="button">Actors Access</a>
-            <a href="/" class="button">Download Resume</a>
+            <a href="../assets/resume2024.png" class="button" download="Joel Gutierrez - Actor Resume">Download Resume</a>
 
         </div>
     </div>
 </template>
+
+<script>
+// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
+export default {
+  name: 'App',
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+  },
+  data() {
+    return {
+        images: [
+            { name: 'betotcc.png', description: 'Beto - Tejano Christmas Carol' },
+            { name: 'hectorsaturnobueno.png', description: 'Hector "Saturno" Bueno - Escapando De Las Tinieblas (film)' },
+            { name: 'madhatterteaparty.png', description: 'Mad Hatter - Alicia (rehearsal)' }    
+        ]
+    }
+}
+}
+</script>
 
 <style scoped>
 .main {
@@ -57,7 +65,9 @@
     display: block;
     margin: auto;
     width: 75%;
-    padding-bottom: 10px;
+    padding-bottom: 0;
+    /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] [color]; */
+    box-shadow: 0 0 5px 0 black;
 }
 .main h1 {
     text-align: center;
@@ -98,5 +108,13 @@
 }
 .main a {
     text-decoration: none;
+}
+.main .resume {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.main .carousel__item h5 {
+    margin: 5px;
+    margin-top:10px;
 }
 </style>
