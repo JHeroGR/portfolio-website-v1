@@ -11,73 +11,26 @@
                         <div class="panel-group">
                             <div id="work-experience" class="panel panel-default">
                                 <div class="panel-heading">Work Experience</div>
-                                <div class="panel-body">
-                                    <div>
-
-                                        <p>Invoice Cloud, Software Engineer QA/SDET (December 2019 - September 2023)</p>
-                                        <ul>
-                                            <li>Enhanced, implemented and maintained our own Framework for 100+ scenarios and scripts both manual
-                                                and automated cases, using C#, with Specflow Framework and ran with Selenium Webdriver.</li>
-                                            <li>Modernized legacy Python and C# test scripts to transition them into new Specflow Cucumber tests using
-                                                Visual Studio Code, and executed continuous tests for both legacy and new test suites in Azure DevOps
-                                                Pipelines.</li>
-                                            <li>Written and logged over 100+ scenarios in Framework while keeping consistent with JIRA XRays for test
-                                                case and coverage.</li>
-                                            <li>Tested current and upcoming features with both manual and automation scenarios, to detect for potential Bug
-                                                Defects or changes in both UI and Database Systems. Using Visual Studio with C#.
-                                                </li>
-                                        </ul>
-                                        
-                                        <hr>
-
-                                        <p>Edinburg CISD, Technology Internship (December 2018 - October 2019)</p>
-                                        <ul>
-                                            <li>Replaced faulty computer parts with new ones for computer systems and hardware-related issues.</li>
-                                            <li>Configured and set up computer systems for co-workers, students, and fellow employees, ensuring they
-                                            have the necessary tools to perform their tasks.</li>
-                                            <li>Created banners and web page layouts for promotional activities of school companies, including STAAR
-                                            and TEA programs, using Adobe Photoshop for image editing and Adobe Illustrator for image creations.</li>
-                                        </ul>
- 
-                                        <hr>
-
-                                        <p>The University of Texas Rio Grande Valley, Lab Consultant (June 2018 - August 2018)</p>
-                                        <ul>
-                                            <li>Graded student’s final examinations.</li>
-                                            <li>Supervised Computer Science Laboratory and mentored students with debugging issues and verifications
-                                            in their programming projects.</li>
-                                        </ul>
- 
-                                        <hr>
-
-                                        <p>Kemper Insurance, Analyst Developer Intern (August 2017 - March 2018)</p>
-                                        <ul>
-                                            <li>Developed automated scripts for faster access to data files stored in websites. Implemented in Python,
-                                            automated with Selenium.</li>
-                                            <li>Developed macros for analysis reports for sales analytics for the company. Implemented in VBA for
-                                            Microsoft Office.</li>
-                                            <li>Developed an automation program that takes in PDF application forms and exports them in CSV file
-                                            formats for lighter file storage safekeeping. Implemented in Python, C#.</li>
-                                        </ul>
+                                    <div class="panel-body">
+                                        <div v-for="job in jobs" :key="job.id">
+                                            <p>{{ job.company }}, {{ job.title }} ({{ job.date }})</p>
+                                            <ul>
+                                                <li v-for="exp, index in job.experience" :key="index">{{ exp }}</li>
+                                            </ul>
+                                            <hr>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             <div id="projects" class="panel panel-default">
                                 <div class="panel-heading">Projects</div>
                                 <div class="panel-body">
-                                    <p>Portfolio Website</p>
-                                    <ul>
-                                        <li>Designed mobile version of this Website with Figma</li>
-                                        <li>Creating mobile version with VueJS</li>
-                                    </ul>
- 
-                                    <hr>
-
-                                    <p>Jojama Properties Website</p>
-                                    <ul>
-                                        <li>Designing and developing a web app for a real estate company in Python and AWS support for image
-                                        storage.</li>
-                                    </ul>
+                                    <div v-for="project in projects" :key="project.id">
+                                        <p>{{ project.title }}</p>
+                                        <ul>
+                                            <li v-for="exp, index in project.experience" :key="index">{{ exp }}</li>
+                                        </ul>
+                                        <hr>
+                                    </div>
                                 </div>
                             </div>
                             <div id="lang-and-frames" class="panel panel-default">
@@ -103,24 +56,28 @@
                     </div>
                     <div class="col-md-4">
                         <div class="panel-group">
-
                             <div id="achievements" class="panel panel-default">
-                                    <div class="panel-heading">Achievements</div>
+                                <div class="panel-heading">Achievements</div>
                                     <div class="panel-body">
-                                        <p>Education</p>
-                                        <ul>
-                                            <li>Bachelor's of Science In Computer Engineering, University Of Texas - Rio Grande Valley (Class of 2019)</li>
-                                        </ul>
-                                         
+                                        <div v-for="acv in achievements" :key=acv.id>
+                                            <div v-if="acv.category!='Certification'">
+                                                <p>{{ acv.category }}</p>
+                                                <ul>
+                                                    <li>{{  acv.degree }}, {{ acv.school }} ({{ acv.grad_year }})</li>
+                                                </ul>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <p>Certification</p>
+                                        <div v-for="acv in achievements" :key="acv.id">
+                                            <div v-if="acv.category=='Certification'">
+                                                <ul>
+                                                    <li>{{ acv.degree }}, {{  acv.school }} ({{ acv.grad_year }})</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                         <hr>
-
-                                        <p>Certifications</p>
-                                        <ul>
-                                            <li>Foundations of the User Experience (UX) Design, Google-Coursera (February 2024)</li>
-                                            <li>Start the UX Design Process: Empathize, Define, and Ideate, Google-Coursera (April 2024)</li>
-                                            <li>Build Wireframes and Low-Fidelity Prototypes, Google-Coursera (May 2024)</li>
-                                        </ul>
-                                    </div>
+                                </div>
                             </div>
                             <div id="tools" class="panel panel-default">
                                     <div class="panel-heading">Tools</div>
@@ -157,6 +114,33 @@
     </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            jobs: [],
+            projects: [],
+            achievements: []
+        }
+    },
+    mounted() {
+        fetch('http://localhost:3000/jobs')
+        .then((res) => res.json())
+        .then(data => this.jobs = data)
+        .catch(err => console.log(err.message))
+
+        fetch('http://localhost:3000/projects')
+        .then((res) => res.json())
+        .then(data => this.projects = data)
+        .catch(err => console.log(err.message))
+
+        fetch('http://localhost:3000/achievements')
+        .then((res) => res.json())
+        .then(data => this.achievements = data)
+        .catch(err => console.log(err.message))
+    }
+}
+</script>
 
 <style scoped>
 .main {

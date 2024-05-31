@@ -5,12 +5,11 @@
             <h1>JHero</h1>
             <h3>Actor</h3>
             <carousel :autoplay="5000" :wrap-around="true" :items-to-show="1">
-                <slide v-for="(image, index) in images" :key="index">
+                <slide v-for="image in images" :key="image.id">
                 <div class="carousel__item">
                     <div class="carousel__slide">
-                    <img :src="require(`@/assets/${image.name}`)" alt="">
+                    <img :src="require(`@/assets/${image.filename}`)" alt="">
                     </div>
-                    <h5>{{ image.description }}</h5>  
                 </div>
 
                 </slide>
@@ -22,7 +21,7 @@
 
             
 
-            <img class="resume" src="@/assets/resume2024.png" alt="Resume">
+            <img class="resume" src="../assets/resume2024.png" alt="Resume">
 
             <a href="https://resumes.actorsaccess.com/JHeroYT" class="button">Actors Access</a>
             <a href="../assets/resume2024.png" class="button" download="Joel Gutierrez - Actor Resume">Download Resume</a>
@@ -46,13 +45,16 @@ export default {
   },
   data() {
     return {
-        images: [
-            { name: 'betotcc.png', description: 'Beto - Tejano Christmas Carol' },
-            { name: 'hectorsaturnobueno.png', description: 'Hector "Saturno" Bueno - Escapando De Las Tinieblas (film)' },
-            { name: 'madhatterteaparty.png', description: 'Mad Hatter - Alicia (rehearsal)' }    
-        ]
+        images: []
     }
-}
+  },
+  mounted() {
+    fetch("http://localhost:3000/images")
+    .then((res) => res.json())
+    .then(data => this.images = data)
+    .catch(err => console.log(err.message))
+
+  }
 }
 </script>
 
