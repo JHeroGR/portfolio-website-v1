@@ -27,6 +27,7 @@
             <a href="../assets/resume2024.png" class="button" download="Joel Gutierrez - Actor Resume">Download Resume</a>
 
         </div>
+        <Socials />
     </div>
 </template>
 

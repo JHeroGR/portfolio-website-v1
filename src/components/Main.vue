@@ -20,7 +20,7 @@ h1, h3 {
   text-align: center;
 }
 img {
-  width: 75%;
+  width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;

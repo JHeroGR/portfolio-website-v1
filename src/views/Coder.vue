@@ -111,6 +111,7 @@
             <a href="/" class="button">Download Resume</a>
 
         </div>
+        <Socials />
     </div>
 </template>
 

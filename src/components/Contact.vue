@@ -53,4 +53,8 @@ export default {
 ::placeholder {
   color: black;
 }
+.contact h3 {
+  padding-top: 10px;
+  font-size:xx-large;
+}
 </style>

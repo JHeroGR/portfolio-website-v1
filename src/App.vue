@@ -1,6 +1,12 @@
 <template>
-  <router-view />
-  <Socials />
+  <router-view v-slot="{ Component, route }">
+    <transition name="slide" mod="out-in">
+      <div :key="route.name">  
+          <component :is="Component"></component>
+        </div>
+    </transition>
+    <Socials />
+  </router-view>
 
 </template>
 
@@ -31,4 +37,22 @@ export default {
 body {
   background: #FFFF;
 }
-</style>
+.slide-enter-active, .slide-leave-active {
+   transition: 300ms;
+
+  }
+ .slide-enter-to{
+    position: relative;
+    left: 0;
+ }
+ .slide-leave{
+    position: absolute;
+  }
+ .slide-enter {
+    left: -100vw;
+    position: absolute;
+  }
+ .slide-leave-to {
+    right: -100vw;
+ }
+ </style>

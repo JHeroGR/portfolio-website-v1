@@ -15,6 +15,7 @@
         </li>
       </ul>
     </div>
+    <Socials />
   </div>
 </template>
 
