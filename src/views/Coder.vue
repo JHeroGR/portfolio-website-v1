@@ -36,19 +36,21 @@
                             <div id="lang-and-frames" class="panel panel-default">
                                 <div class="panel-heading">Language and Frameworks</div>
                                 <div class="panel-body">
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>Python</li>
-                                            <li>C#</li>
-                                            <li>HTML / CSS / JavaScript</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>Selenium</li>
-                                            <li>Flask</li>
-                                            <li>VueJS</li>
-                                        </ul>
+                                    <div class="row align-items-center">
+                                        <div class="col">     
+                                            <ul>
+                                                <div v-for="lang in languages" :key="lang.id">
+                                                    <li v-if="lang.category=='language'">{{ lang.name }}</li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <ul>
+                                                <div v-for="lang in languages" :key="lang.id">
+                                                    <li v-if="lang.category=='framework'">{{ lang.name }}</li>
+                                                </div>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -80,17 +82,28 @@
                                 </div>
                             </div>
                             <div id="tools" class="panel panel-default">
-                                    <div class="panel-heading">Tools</div>
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li>Visual Studio Code / Visual Studio</li>
-                                            <li>Figma</li>                              
-                                        </ul>
-                                        <ul>
-                                            <li>Premiere Pro / Davinci Resolve</li>
-                                            <li>Git / GitHub</li>  
-                                        </ul>
+                                <div class="panel-heading">Tools</div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div v-for="tool in tools" :key="tool.id">
+                                                <div v-if="tool.category=='programming'">
+                                                    <ul>
+                                                        <li>{{ tool.name }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div v-for="tool in tools" :key="tool.id">
+                                                <div v-if="tool.category=='editing'">
+                                                    <ul>
+                                                        <li>{{ tool.name }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>                                        </div>
                                     </div>
+                                </div>
                             </div>
                             <div id="skills" class="panel panel-default">
                                     <div class="panel-heading">Skills</div>
@@ -105,10 +118,14 @@
                         </div>
                     </div>
                 </div>
+            
+                <div class="d-grid gap-2 d-md-block">
+                    <RouterLink to="https://github.com/JHeroGR" class="btn btn-secondary" type="button">GitHub</RouterLink>
+                    <RouterLink to="/" class="btn btn-secondary" type="button">Download Resume</RouterLink>
+                </div>
+
             </div>
             
-            <a href="https://github.com/JHeroGR" class="button">GitHub</a>
-            <a href="/" class="button">Download Resume</a>
 
         </div>
         <Socials />
@@ -121,7 +138,9 @@ export default {
         return {
             jobs: [],
             projects: [],
-            achievements: []
+            achievements: [],
+            languages: [],
+            tools: [],
         }
     },
     mounted() {
@@ -139,6 +158,17 @@ export default {
         .then((res) => res.json())
         .then(data => this.achievements = data)
         .catch(err => console.log(err.message))
+    
+        fetch('http://localhost:3000/languages')
+        .then((res) => res.json())
+        .then(data => this.languages = data)
+        .catch(err => console.log(err.message))
+
+        fetch('http://localhost:3000/tools')
+        .then((res) => res.json())
+        .then(data => this.tools = data)
+        .catch(err => console.log(err.message))
+
     }
 }
 </script>
@@ -151,23 +181,16 @@ export default {
 .main h1 {
     text-align: center;
 }
-.main h3, .main .button {
+.main h3, .main .btn {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     font-weight: bold;
 }
-.main .button {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    background: #D9D9D9;
-    display: inline-block;
-    color: black;
+.main .d-md-block {
+    padding-bottom: 20px;
+}
+.main .btn {
+    border: 1px solid black;
 }
 .main .panel-default {
     margin: 10px;

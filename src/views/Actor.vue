@@ -23,8 +23,10 @@
 
             <img class="resume" src="../assets/resume2024.png" alt="Resume">
 
-            <a href="https://resumes.actorsaccess.com/JHeroYT" class="button">Actors Access</a>
-            <a href="../assets/resume2024.png" class="button" download="Joel Gutierrez - Actor Resume">Download Resume</a>
+            <div class="d-grid gap-2 d-md-block">
+                <RouterLink to="https://resumes.actorsaccess.com/JHeroYT" class="btn btn-secondary" type="button">Actors Access</RouterLink>
+                <RouterLink to="../assets/resume2024.png" class="btn btn-secondary" type="button" download="Joel Gutierrez - Actor Resume">Download Resume</RouterLink>
+            </div>
 
         </div>
         <Socials />
@@ -72,26 +74,19 @@ export default {
     /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] [color]; */
     box-shadow: 0 0 5px 0 black;
 }
+.main .d-md-block {
+    padding-bottom: 20px;
+}
 .main h1 {
     text-align: center;
 }
-.main h3, .main .button {
+.main h3, .main .btn {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     font-weight: bold;
 }
-.main .button {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    background: #D9D9D9;
-    display: inline-block;
-    color: black;
+.main .btn {
+    border: 1px solid black;
 }
 .main .carousel {
     margin: 10px auto;

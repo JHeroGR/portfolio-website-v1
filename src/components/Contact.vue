@@ -1,22 +1,24 @@
 <template>
     <div class="contact">
-      <h3>LET'S CONNECT!</h3>
-      <p>Hit Me Up And We'll Keep In Touch!</p>
-      <p>Email: <a href="mailto:jheroytc@gmail.com">jheroytc@gmail.com</a></p>
-      <p>Phone: <a href="tel:+9568679183">(956) 867-9183</a></p>
-      <form action="">
-        <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <input type="text" id="subject" name="subject" placeholder="Subject">
-        </div>
-        <div class="form-group">
-            <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
-        </div>
-        <input type="submit" value="Send Email">
-      </form>
+      <div class="container">
+        <h3>LET'S CONNECT!</h3>
+        <p>Hit Me Up And We'll Keep In Touch!</p>
+        <p>Email: <a href="mailto:jheroytc@gmail.com">jheroytc@gmail.com</a></p>
+        <p>Phone: <a href="tel:+9568679183">(956) 867-9183</a></p>
+        <form action="">
+          <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+          </div>
+          <div class="form-group">
+              <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+          </div>
+          <input type="submit" value="Send Email">
+        </form>
     </div>
+  </div>
 </template>
 
 <script>
@@ -39,6 +41,9 @@ export default {
   text-decoration: none;
   color: black;
 }
+.contact h3 {
+  font-size:xx-large;
+}
 .contact input, .contact textarea {
   width: 100%;
   padding: 12px;
@@ -49,6 +54,10 @@ export default {
   margin-bottom: 16px;
   resize: vertical;
   background: #b1b1b1;
+}
+.contact input:hover {
+  background: #2a6a3a;
+  color: white;
 }
 ::placeholder {
   color: black;

@@ -9,11 +9,14 @@
       <h3>Gamer</h3>
 
       <h3>Full-Length Videos</h3>
-      <ul>
-        <li v-for="fullVideo in fullVideos" :key="fullVideo.id">
-          <a :href="'https://www.youtube.com/watch?v=' + fullVideo.id"><img :src=fullVideo.thumbnail></a>
-        </li>
-      </ul>
+
+      <div class="image-list-container">
+        <ul>
+          <li v-for="fullVideo in fullVideos" :key="fullVideo.id">
+            <a :href="'https://www.youtube.com/watch?v=' + fullVideo.id"><img :src=fullVideo.thumbnail></a>
+          </li>
+        </ul>
+      </div>
     </div>
     <Socials />
   </div>
@@ -70,10 +73,23 @@ export default {
   text-align: center;
   font-weight: bold;
 }
+.main .image-list-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.main ul {
+  list-style: none;
+  padding: 0;
+}
 .main li {
     text-decoration: none;
-    list-style-type: none;
-    display: block;
-    margin: 10px 0 10px 0;
+    display: inline-flex;
+    margin: 10px;
+}
+.main li img {
+  border-radius: 5px;
+}
+.main li img:hover {
+  box-shadow: 1px 1px 1px 5px black;
 }
 </style>
