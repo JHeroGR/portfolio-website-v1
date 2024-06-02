@@ -133,43 +133,61 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import { getDatabase, ref as dbRef, onValue } from 'firebase/database';
+
 export default {
-    data() {
-        return {
-            jobs: [],
-            projects: [],
-            achievements: [],
-            languages: [],
-            tools: [],
-        }
-    },
-    mounted() {
-        fetch('http://localhost:3000/jobs')
-        .then((res) => res.json())
-        .then(data => this.jobs = data)
-        .catch(err => console.log(err.message))
+    setup() {
+    const database = getDatabase(app); // Assuming `app` is defined in your main.js
 
-        fetch('http://localhost:3000/projects')
-        .then((res) => res.json())
-        .then(data => this.projects = data)
-        .catch(err => console.log(err.message))
+    const data = ref(null);
 
-        fetch('http://localhost:3000/achievements')
-        .then((res) => res.json())
-        .then(data => this.achievements = data)
-        .catch(err => console.log(err.message))
+    const databaseURL = "https://jhero-portfolio-website-default-rtdb.firebaseio.com/"
+    onValue(dbRef(database, databaseURL), (snapshot) => {
+      data.value = snapshot.val(); // Assign the retrieved data to the `data` variable
+    });
+
+    return {
+      data
+    };
+  }
+    // data() {
+    //     return {
+    //         jobs: [],
+    //         projects: [],
+    //         achievements: [],
+    //         languages: [],
+    //         tools: [],
+    //     }
+    // },
+    // mounted() {
+
+        // fetch('http://localhost:3000/jobs')
+        // .then((res) => res.json())
+        // .then(data => this.jobs = data)
+        // .catch(err => console.log(err.message))
+
+        // fetch('http://localhost:3000/projects')
+        // .then((res) => res.json())
+        // .then(data => this.projects = data)
+        // .catch(err => console.log(err.message))
+
+        // fetch('http://localhost:3000/achievements')
+        // .then((res) => res.json())
+        // .then(data => this.achievements = data)
+        // .catch(err => console.log(err.message))
     
-        fetch('http://localhost:3000/languages')
-        .then((res) => res.json())
-        .then(data => this.languages = data)
-        .catch(err => console.log(err.message))
+        // fetch('http://localhost:3000/languages')
+        // .then((res) => res.json())
+        // .then(data => this.languages = data)
+        // .catch(err => console.log(err.message))
 
-        fetch('http://localhost:3000/tools')
-        .then((res) => res.json())
-        .then(data => this.tools = data)
-        .catch(err => console.log(err.message))
+        // fetch('http://localhost:3000/tools')
+        // .then((res) => res.json())
+        // .then(data => this.tools = data)
+        // .catch(err => console.log(err.message))
 
-    }
+    // }
 }
 </script>
 

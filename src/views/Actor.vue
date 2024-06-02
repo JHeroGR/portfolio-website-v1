@@ -52,6 +52,7 @@ export default {
     }
   },
   mounted() {
+    
     fetch("http://localhost:3000/images")
     .then((res) => res.json())
     .then(data => this.images = data)
