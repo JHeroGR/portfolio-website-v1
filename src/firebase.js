@@ -7,7 +7,7 @@ import { getDatabase } from "firebase/database";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC6wiDj9sijripVVT_37V7TnUkuqaiYwNs",
+  apiKey: `${process.env.VITE_FIREBASE_API_KEY}`,
   authDomain: "jhero-portfolio-website.firebaseapp.com",
   databaseURL: "https://jhero-portfolio-website-default-rtdb.firebaseio.com",
   projectId: "jhero-portfolio-website",
@@ -20,5 +20,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-console.log(db);
+
 export default db;
