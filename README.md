@@ -35,3 +35,4 @@ My personal website showcasing my skills as an Actor, content as a Gamer, and pr
 - included actual database (firebase - realtime database) - **June 2**
 - fixed mobile and desktop view - **June 3**
 - finished reading from databases - **June 4**
+- added slide-in/slide-out animation - **June 4**
