@@ -4,28 +4,37 @@
             <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
             <h1>JHero</h1>
             <h3>Actor</h3>
-            <carousel :autoplay="5000" :wrap-around="true" :items-to-show="1">
-                <slide v-for="image in images" :key="image.id">
-                <div class="carousel__item">
-                    <div class="carousel__slide">
-                    <img :src="require(`@/assets/${image.filename}`)" alt="">
-                    </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <carousel :autoplay="5000" :wrap-around="true" :items-to-show="1">
+                        <slide v-for="image in images" :key="image.id">
+                            <div class="carousel__item">
+                                <div class="carousel__slide">
+                                    <img :src="require(`@/assets/${image.filename}`)" alt="">
+                                </div>
+                                <br>
+                                <p>{{ image.project_name }}</p>
+                                <p>{{ image.project_role }}</p>
+                            </div>
+
+                        </slide>
+
+                        <template #addons>
+                            <navigation />
+                        </template>
+                    </carousel>
                 </div>
+                <div class="col-md-6">
+                    <img class="resume" src="../assets/resume2024.png" alt="Resume">
+                    <div class="btn-container">
+                        <div class="d-grid gap-2">
+                            <RouterLink to="https://resumes.actorsaccess.com/JHeroYT" class="btn btn-secondary btn-block" type="button">Actors Access</RouterLink>
+                            <RouterLink to="../assets/resume2024.png" class="btn btn-secondary btn-block" type="button" download="Joel Gutierrez - Actor Resume">Download Resume</RouterLink>
+                        </div>
 
-                </slide>
-
-                <template #addons>
-                    <navigation />
-                </template>
-            </carousel>
-
-            
-
-            <img class="resume" src="../assets/resume2024.png" alt="Resume">
-
-            <div class="d-grid gap-2 d-md-block">
-                <RouterLink to="https://resumes.actorsaccess.com/JHeroYT" class="btn btn-secondary" type="button">Actors Access</RouterLink>
-                <RouterLink to="../assets/resume2024.png" class="btn btn-secondary" type="button" download="Joel Gutierrez - Actor Resume">Download Resume</RouterLink>
+                    </div>
+                        
+                </div>
             </div>
 
         </div>
@@ -54,7 +63,7 @@ export default {
     }
   },
   methods: {
-    async getImages(db) {
+    async getImages() {
         const dbRef = ref(getDatabase())
 
         get(child(dbRef, 'images')).then((snapshot) => {
@@ -67,13 +76,9 @@ export default {
                 console.log(error)
             })    
         }
-    // fetch("http://localhost:3000/images")
-    // .then((res) => res.json())
-    // .then(data => this.images = data)
-    // .catch(err => console.log(err.message))
   },
   mounted() {
-    this.getImages(db)
+    this.getImages()
   }
 }
 </script>
@@ -91,7 +96,7 @@ export default {
     /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] [color]; */
     box-shadow: 0 0 5px 0 black;
 }
-.main .d-md-block {
+.main .btn-container {
     padding-bottom: 20px;
 }
 .main h1 {
@@ -106,12 +111,7 @@ export default {
     border: 1px solid black;
 }
 .main .carousel {
-    margin: 10px auto;
-    overflow: hidden;
-}
-.main .carousel {
-    flex: 0 0 100%;
-    overflow: hidden;
+    margin: 15% auto 15% auto;
 }
 .main .carousel-item img {
     width: 75%;
@@ -125,8 +125,8 @@ export default {
     text-decoration: none;
 }
 .main .resume {
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 .main .carousel__item h5 {
     margin: 5px;

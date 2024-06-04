@@ -6,16 +6,23 @@
         <p>Email: <a href="mailto:jheroytc@gmail.com">jheroytc@gmail.com</a></p>
         <p>Phone: <a href="tel:+9568679183">(956) 867-9183</a></p>
         <form action="">
-          <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Email">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                  <input type="text" id="subject" name="subject" placeholder="Subject">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="Message" style="height:120px"></textarea>
+            </div>
+
+            </div>
           </div>
-          <div class="form-group">
-              <input type="text" id="subject" name="subject" placeholder="Subject">
-          </div>
-          <div class="form-group">
-              <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
-          </div>
-          <input type="submit" value="Send Email">
+          <input class='submit-button' type="submit" value="Send Email">
         </form>
     </div>
   </div>
@@ -55,7 +62,7 @@ export default {
   resize: vertical;
   background: #b1b1b1;
 }
-.contact input:hover {
+.contact .submit-button:hover {
   background: #2a6a3a;
   color: white;
 }

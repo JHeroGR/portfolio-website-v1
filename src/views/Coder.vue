@@ -116,12 +116,14 @@
                                     </div>
                             </div>
                         </div>
+                        <div class="btn-container">
+                            <div class="d-grid gap-2">
+                                <RouterLink to="https://github.com/JHeroGR" class="btn btn-secondary" type="button">GitHub</RouterLink>
+                                <RouterLink to="/" class="btn btn-secondary" type="button">Download Resume</RouterLink>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-            
-                <div class="d-grid gap-2 d-md-block">
-                    <RouterLink to="https://github.com/JHeroGR" class="btn btn-secondary" type="button">GitHub</RouterLink>
-                    <RouterLink to="/" class="btn btn-secondary" type="button">Download Resume</RouterLink>
                 </div>
 
             </div>
@@ -149,7 +151,7 @@ export default {
         }
     },
     methods: {
-        async getJobs(db) {
+        async getJobs() {
             const dbRef = ref(getDatabase())
 
             get(child(dbRef, 'jobs')).then((snapshot) => {
@@ -162,7 +164,7 @@ export default {
                 console.log(error)
             })
         },
-        async getProjects(db) {
+        async getProjects() {
             const dbRef = ref(getDatabase())
 
             get(child(dbRef, 'projects')).then((snapshot) => {
@@ -175,7 +177,7 @@ export default {
                 console.log(error)
             })
         },
-        async getLanguages(db) {
+        async getLanguages() {
             const dbRef = ref(getDatabase())
 
             get(child(dbRef, 'languages')).then((snapshot) => {
@@ -188,7 +190,7 @@ export default {
                 console.log(error)
             })
         },
-        async getTools(db) {
+        async getTools() {
             const dbRef = ref(getDatabase())
 
             get(child(dbRef, 'tools')).then((snapshot) => {
@@ -201,7 +203,7 @@ export default {
                 console.log(error)
             })
         },
-        async getAchievements(db) {
+        async getAchievements() {
             const dbRef = ref(getDatabase())
 
             get(child(dbRef, 'achievements')).then((snapshot) => {
@@ -214,7 +216,7 @@ export default {
                 console.log(error)
             })
         },
-        async getSkills(db) {
+        async getSkills() {
             const dbRef = ref(getDatabase())
 
             get(child(dbRef, 'skills')).then((snapshot) => {
@@ -229,52 +231,14 @@ export default {
         }          
     },
     mounted() {
-        this.getJobs(db),
-        this.getProjects(db),
-        this.getLanguages(db),
-        this.getTools(db),
-        this.getAchievements(db),
-        this.getSkills(db)
+        this.getJobs(),
+        this.getProjects(),
+        this.getLanguages(),
+        this.getTools(),
+        this.getAchievements(),
+        this.getSkills()
     }
 }
-    // data() {
-    //     return {
-    //         jobs: [],
-    //         projects: [],
-    //         achievements: [],
-    //         languages: [],
-    //         tools: [],
-    //     }
-    // },
-    // mounted() {
-
-        // fetch('http://localhost:3000/jobs')
-        // .then((res) => res.json())
-        // .then(data => this.jobs = data)
-        // .catch(err => console.log(err.message))
-
-        // fetch('http://localhost:3000/projects')
-        // .then((res) => res.json())
-        // .then(data => this.projects = data)
-        // .catch(err => console.log(err.message))
-
-        // fetch('http://localhost:3000/achievements')
-        // .then((res) => res.json())
-        // .then(data => this.achievements = data)
-        // .catch(err => console.log(err.message))
-    
-        // fetch('http://localhost:3000/languages')
-        // .then((res) => res.json())
-        // .then(data => this.languages = data)
-        // .catch(err => console.log(err.message))
-
-        // fetch('http://localhost:3000/tools')
-        // .then((res) => res.json())
-        // .then(data => this.tools = data)
-        // .catch(err => console.log(err.message))
-
-    // }
-
 </script>
 
 <style scoped>
@@ -290,7 +254,8 @@ export default {
     text-align: center;
     font-weight: bold;
 }
-.main .d-md-block {
+.main .btn-container {
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 .main .btn {
