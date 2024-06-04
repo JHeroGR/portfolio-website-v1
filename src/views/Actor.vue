@@ -36,10 +36,9 @@
                         
                 </div>
             </div>
-
         </div>
-        <Socials />
     </div>
+    <Socials />
 </template>
 
 <script>
@@ -48,14 +47,16 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import { db } from '../firebase'
 import { getDatabase, ref, child, get } from 'firebase/database'
+import Socials from '../views/Socials.vue'
 
 export default {
-  name: 'App',
+  name: 'Actor',
   components: {
     Carousel,
     Slide,
     Pagination,
     Navigation,
+    Socials
   },
   data() {
     return {

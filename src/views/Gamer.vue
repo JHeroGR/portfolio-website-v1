@@ -18,12 +18,18 @@
         </ul>
       </div>
     </div>
-    <Socials />
   </div>
+  <Socials />
 </template>
 
 <script>
+import Socials from '../views/Socials'
+
 export default {
+  name: 'App',
+  components: {
+    Socials,
+  },
   data() {
     return {
       fullVideos: []

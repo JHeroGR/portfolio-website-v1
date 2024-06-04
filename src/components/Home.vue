@@ -1,7 +1,5 @@
 <template>
   <div>
-    <Test />
-
     <Main />
     
     <Talents />
@@ -10,6 +8,7 @@
     
     <Contact />
     
+    <Socials />
   </div>
 </template>
 
@@ -18,17 +17,16 @@ import Main from './Main.vue'
 import Talents from './Talents.vue'
 import Contact from './Contact.vue'
 import Updates from './Updates.vue'
+import Socials from '../views/Socials.vue'
 
 export default {
   name: 'Home',
-  props: {
-    msg: String
-  },
   components: {
     Main,
     Talents,
     Contact,
     Updates,
+    Socials
   }
   
 }

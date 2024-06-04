@@ -33,31 +33,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="lang-and-frames" class="panel panel-default">
-                                <div class="panel-heading">Language and Frameworks</div>
-                                <div class="panel-body">
-                                    <div class="row align-items-center">
-                                        <div class="col">     
-                                            <ul>
-                                                <div v-for="lang in languages" :key="lang.id">
-                                                    <li v-if="lang.category=='language'">{{ lang.name }}</li>
-                                                </div>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <ul>
-                                                <div v-for="lang in languages" :key="lang.id">
-                                                    <li v-if="lang.category=='framework'">{{ lang.name }}</li>
-                                                </div>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="panel-group">
                             <div id="achievements" class="panel panel-default">
                                 <div class="panel-heading">Achievements</div>
                                     <div class="panel-body">
@@ -79,7 +54,31 @@
                                             </div>
                                         </div>
                                         <hr>
-                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel-group">
+                            <div id="lang-and-frames" class="panel panel-default">
+                                <div class="panel-heading">Language and Frameworks</div>
+                                <div class="panel-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">     
+                                            <ul>
+                                                <div v-for="lang in languages" :key="lang.id">
+                                                    <li v-if="lang.category=='language'">{{ lang.name }}</li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <ul>
+                                                <div v-for="lang in languages" :key="lang.id">
+                                                    <li v-if="lang.category=='framework'">{{ lang.name }}</li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div id="tools" class="panel panel-default">
@@ -130,16 +129,20 @@
             
 
         </div>
-        <Socials />
     </div>
+    <Socials />
 </template>
 
 <script>
 import { db } from '../firebase'
 import { getDatabase, ref, child, get } from 'firebase/database'
+import Socials from './Socials.vue'
 
 export default {
     name: 'Coder',
+    components: {
+        Socials
+    },
     data() {
         return {
             jobs: [],
