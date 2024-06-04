@@ -62,15 +62,15 @@
                             <div id="achievements" class="panel panel-default">
                                 <div class="panel-heading">Achievements</div>
                                     <div class="panel-body">
+                                        <p>Education</p>
                                         <div v-for="acv in achievements" :key=acv.id>
                                             <div v-if="acv.category!='Certification'">
-                                                <p>{{ acv.category }}</p>
                                                 <ul>
                                                     <li>{{  acv.degree }}, {{ acv.school }} ({{ acv.grad_year }})</li>
                                                 </ul>
-                                                <hr>
                                             </div>
                                         </div>
+                                        <hr>
                                         <p>Certification</p>
                                         <div v-for="acv in achievements" :key="acv.id">
                                             <div v-if="acv.category=='Certification'">
@@ -80,6 +80,7 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        
                                 </div>
                             </div>
                             <div id="tools" class="panel panel-default">
@@ -102,7 +103,8 @@
                                                         <li>{{ tool.name }}</li>
                                                     </ul>
                                                 </div>
-                                            </div>                                        </div>
+                                            </div>                                        
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -110,9 +112,7 @@
                                     <div class="panel-heading">Skills</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Automation</li>
-                                            <li>UI Design</li>
-                                            <li>Web App Development</li>
+                                            <li v-for="skill in skills" :key="skill.id">{{ skill.name }}</li>
                                         </ul>
                                     </div>
                             </div>
@@ -134,7 +134,119 @@
 </template>
 
 <script>
+import { db } from '../firebase'
+import { getDatabase, ref, child, get } from 'firebase/database'
 
+export default {
+    name: 'Coder',
+    data() {
+        return {
+            jobs: [],
+            projects: [],
+            langauges: [],
+            tools: [],
+            achievements: [],
+            skills:[]
+        }
+    },
+    methods: {
+        async getJobs(db) {
+            const dbRef = ref(getDatabase())
+
+            get(child(dbRef, 'jobs')).then((snapshot) => {
+                if (snapshot.exists()) {
+                this.jobs = snapshot.val()
+                } else {
+                console.log('no data')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })
+        },
+        async getProjects(db) {
+            const dbRef = ref(getDatabase())
+
+            get(child(dbRef, 'projects')).then((snapshot) => {
+                if (snapshot.exists()) {
+                this.projects = snapshot.val()
+                } else {
+                console.log('no data')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })
+        },
+        async getLanguages(db) {
+            const dbRef = ref(getDatabase())
+
+            get(child(dbRef, 'languages')).then((snapshot) => {
+                if (snapshot.exists()) {
+                this.languages = snapshot.val()
+                } else {
+                console.log('no data')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })
+        },
+        async getTools(db) {
+            const dbRef = ref(getDatabase())
+
+            get(child(dbRef, 'tools')).then((snapshot) => {
+                if (snapshot.exists()) {
+                this.tools = snapshot.val()
+                } else {
+                console.log('no data')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })
+        },
+        async getAchievements(db) {
+            const dbRef = ref(getDatabase())
+
+            get(child(dbRef, 'achievements')).then((snapshot) => {
+                if (snapshot.exists()) {
+                this.achievements = snapshot.val()
+                } else {
+                console.log('no data')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })
+        },
+        async getSkills(db) {
+            const dbRef = ref(getDatabase())
+
+            get(child(dbRef, 'skills')).then((snapshot) => {
+                if (snapshot.exists()) {
+                this.skills = snapshot.val()
+                } else {
+                console.log('no data')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })        
+        }          
+    },
+    mounted() {
+        this.getJobs(db),
+        this.getProjects(db),
+        this.getLanguages(db),
+        this.getTools(db),
+        this.getAchievements(db),
+        this.getSkills(db)
+    }
+}
+    // data() {
+    //     return {
+    //         jobs: [],
+    //         projects: [],
+    //         achievements: [],
+    //         languages: [],
+    //         tools: [],
+    //     }
+    // },
     // mounted() {
 
         // fetch('http://localhost:3000/jobs')
@@ -163,7 +275,7 @@
         // .catch(err => console.log(err.message))
 
     // }
-// }
+
 </script>
 
 <style scoped>

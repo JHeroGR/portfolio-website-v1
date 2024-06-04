@@ -37,6 +37,8 @@
 // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { db } from '../firebase'
+import { getDatabase, ref, child, get } from 'firebase/database'
 
 export default {
   name: 'App',
@@ -51,13 +53,27 @@ export default {
         images: []
     }
   },
-  mounted() {
-    
-    fetch("http://localhost:3000/images")
-    .then((res) => res.json())
-    .then(data => this.images = data)
-    .catch(err => console.log(err.message))
+  methods: {
+    async getImages(db) {
+        const dbRef = ref(getDatabase())
 
+        get(child(dbRef, 'images')).then((snapshot) => {
+                if (snapshot.exists()) {
+                    this.images = snapshot.val()
+                } else {
+                console.log('no data')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })    
+        }
+    // fetch("http://localhost:3000/images")
+    // .then((res) => res.json())
+    // .then(data => this.images = data)
+    // .catch(err => console.log(err.message))
+  },
+  mounted() {
+    this.getImages(db)
   }
 }
 </script>
