@@ -1,6 +1,7 @@
 <template>
   <div>
-    
+    <Test />
+
     <Main />
     
     <Talents />
@@ -27,7 +28,7 @@ export default {
     Main,
     Talents,
     Contact,
-    Updates
+    Updates,
   }
   
 }

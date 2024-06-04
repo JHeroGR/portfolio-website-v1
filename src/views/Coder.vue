@@ -1,4 +1,5 @@
 <template>
+    {{  database }}
     <div class="main">
         <div class="container">
             <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
@@ -133,33 +134,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import { getDatabase, ref as dbRef, onValue } from 'firebase/database';
 
-export default {
-    setup() {
-    const database = getDatabase(app); // Assuming `app` is defined in your main.js
-
-    const data = ref(null);
-
-    const databaseURL = "https://jhero-portfolio-website-default-rtdb.firebaseio.com/"
-    onValue(dbRef(database, databaseURL), (snapshot) => {
-      data.value = snapshot.val(); // Assign the retrieved data to the `data` variable
-    });
-
-    return {
-      data
-    };
-  }
-    // data() {
-    //     return {
-    //         jobs: [],
-    //         projects: [],
-    //         achievements: [],
-    //         languages: [],
-    //         tools: [],
-    //     }
-    // },
     // mounted() {
 
         // fetch('http://localhost:3000/jobs')
@@ -188,7 +163,7 @@ export default {
         // .catch(err => console.log(err.message))
 
     // }
-}
+// }
 </script>
 
 <style scoped>
