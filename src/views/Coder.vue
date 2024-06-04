@@ -1,5 +1,4 @@
 <template>
-    {{  database }}
     <div class="main">
         <div class="container">
             <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
