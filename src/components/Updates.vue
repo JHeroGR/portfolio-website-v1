@@ -33,7 +33,7 @@
 <style scoped>
 .updates {
   background: #FFC772;
-  padding: 10px;
+  padding-top: 3%;
   text-align: center;
 }
 .updates h3 {

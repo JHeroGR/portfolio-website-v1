@@ -1,7 +1,5 @@
 <template>
     <div class="main">
-      <h1>JHero</h1>
-      <h3>Actor | Gamer | Coder</h3>
       <img src="../assets/headshot2024.jpg" alt="">
     </div>
 </template>
@@ -19,7 +17,6 @@ h1, h3 {
 img {
   width: 50%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 5% auto 5% auto;
 }
 </style>

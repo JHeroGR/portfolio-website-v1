@@ -1,15 +1,21 @@
 <template>
-  <div>
-    <Main />
-    
-    <Talents />
-    
+  <h1>JHero</h1>
+  <h3>Actor | Gamer | Coder</h3>
+
+  <div class="row">
+    <div class="col-md-6">
+      <Main />
+    </div>
+    <div class="col-md-6">
+      <Talents />
+    </div>
+  </div>
+
     <Updates />
     
     <Contact />
     
     <Socials />
-  </div>
 </template>
 
 <script>
@@ -34,5 +40,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+h1, h3 {
+  text-align: center;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+.row {
+  background-color: #59db5e;
+  text-align: center;
+  margin-right: 0;
+}
 </style>

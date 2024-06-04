@@ -41,7 +41,7 @@ export default {
 <style scoped>
 .contact {
   background: #9172ff;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
 }
 .contact a {

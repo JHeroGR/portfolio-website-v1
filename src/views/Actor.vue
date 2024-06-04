@@ -112,7 +112,7 @@ export default {
     border: 1px solid black;
 }
 .main .carousel {
-    margin: 15% auto 15% auto;
+    margin: 5% auto 5% auto;
 }
 .main .carousel-item img {
     width: 75%;
