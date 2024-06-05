@@ -46,7 +46,7 @@ h1, h3 {
   margin-top: 2%;
 }
 .row {
-  background-color: #59db5e;
+  /* background-color: #59db5e; */
   text-align: center;
   margin-right: 0;
 }

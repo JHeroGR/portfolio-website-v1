@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main bg-danger">
     <div class="container">
       <router-link to="/"><i class="bi bi-chevron-left"
           style="color: black; font-weight: bold; font-size: xx-large"
@@ -68,14 +68,12 @@ export default {
 
 <style scoped>
 .main {
-  background: #ff5d5d;
   width: 100%;
 }
 .main h1 {
   text-align: center;
 }
 .main h3 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   font-weight: bold;
 }

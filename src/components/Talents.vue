@@ -14,17 +14,16 @@
 
 <script>
 export default {
-  name: 'Talents',
-  props: {
-    msg: String
-  }
-  
+  name: 'Talents',  
 }
 </script>
 
 <style scoped>
 .container {
   margin-top: 10%;
+}
+.container h3 {
+  font-size: xx-large;
 }
 .btn {
   margin-bottom: 5%;

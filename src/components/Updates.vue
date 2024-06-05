@@ -7,7 +7,7 @@
         <a href="https://www.southtexascollege.edu/theatre-productions/box-office.html" class="card-link">
         <div class="card border-dark">
           <img src="../assets/burritospamorir.png" class="card-img-top" alt="Burritos Pa' Morir">
-          <div class="card-body border-dark">
+          <div class="card-body">
             <h5 class="card-title">Burritos Pa' Morir</h5>
             <p class="card-text">STC Cooper Center</p>
           </div>
@@ -17,7 +17,7 @@
       <a href="https://www.youtube.com/watch?v=fdeMQ7qIf8o" class="card-link">
         <div class="card border-dark">
           <img src="../assets/manic.png" class="card-img-top" alt="Manic Film">
-          <div class="card-body border-dark">
+          <div class="card-body">
             <h5 class="card-title">MANIC</h5>
             <p class="card-text">Feature Film</p>
           </div>
@@ -32,7 +32,6 @@
 
 <style scoped>
 .updates {
-  background: #FFC772;
   padding-top: 3%;
   text-align: center;
 }
@@ -50,9 +49,15 @@
   object-position: center top;
 }
 .card:hover {
-  box-shadow: 1px 1px 5px 5px black;
+  box-shadow: 1px 1px 5px 5px white;
   visibility: visible;
   opacity: 1;
   transition: all .1s ease-in;
+}
+.card .card-title, .card-text {
+  color: #ffff;
+}
+.card-body {
+  background: black;
 }
 </style>

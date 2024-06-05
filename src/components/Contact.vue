@@ -30,18 +30,14 @@
 
 <script>
 export default {
-  name: 'Contact',
-  props: {
-    msg: String
-  }
-  
+  name: 'Contact',  
 }
 </script>
 
 <style scoped>
 .contact {
-  background: #9172ff;
-  /* padding: 10px; */
+  /* background: #9172ff; */
+  padding-top: 3%;
   text-align: center;
 }
 .contact a {

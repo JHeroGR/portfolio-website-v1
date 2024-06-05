@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main bg-warning">
         <div class="container">
             <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
             <h1>JHero</h1>
@@ -246,14 +246,12 @@ export default {
 
 <style scoped>
 .main {
-    background: #FFE55D;
     width: 100%;
 }
 .main h1 {
     text-align: center;
 }
 .main h3, .main .btn {
-    font-family: 'Courier New', Courier, monospace;
     text-align: center;
     font-weight: bold;
 }

@@ -14,13 +14,12 @@ My personal website showcasing my skills as an Actor, content as a Gamer, and pr
 - CSS3 <img src='https://cdn-icons-png.flaticon.com/512/732/732190.png' alt='CSS3' width='15px' />
 
 
-
-
 ## TODO
 - contact form functionality
 - modal alertbox 
 - firebase - storage (for images)?
-- deployment to live server
+- dark and light 
+
 
 ## DONE
 - project creation (vue.js) - **May 25**
@@ -36,3 +35,4 @@ My personal website showcasing my skills as an Actor, content as a Gamer, and pr
 - fixed mobile and desktop view - **June 3**
 - finished reading from databases - **June 4**
 - added slide-in/slide-out animation - **June 4**
+- deployment to live server - **June 4**
