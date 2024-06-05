@@ -25,11 +25,11 @@
                     </carousel>
                 </div>
                 <div class="col-md-6">
-                    <img class="resume" src="../assets/resume2024.png" alt="Resume">
+                    <img class="resume" src="../assets/actor_resume2024.png" alt="Resume">
                     <div class="btn-container">
                         <div class="d-grid gap-2">
-                            <RouterLink to="https://resumes.actorsaccess.com/JHeroYT" class="btn btn-secondary btn-block" type="button">Actors Access</RouterLink>
-                            <RouterLink to="../assets/resume2024.png" class="btn btn-secondary btn-block" type="button" download="Joel Gutierrez - Actor Resume">Download Resume</RouterLink>
+                            <a href="https://resumes.actorsaccess.com/JHeroYT" class="btn btn-secondary btn-block" type="button">Actors Access</a>
+                            <a to="../assets/actor_resume2024.png" class="btn btn-secondary btn-block" type="button" download="Joel Gutierrez - Actor Resume">Download Resume</a>
                         </div>
 
                     </div>

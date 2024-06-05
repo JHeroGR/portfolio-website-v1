@@ -117,8 +117,8 @@
                         </div>
                         <div class="btn-container">
                             <div class="d-grid gap-2">
-                                <RouterLink to="https://github.com/JHeroGR" class="btn btn-secondary" type="button">GitHub</RouterLink>
-                                <RouterLink to="/" class="btn btn-secondary" type="button">Download Resume</RouterLink>
+                                <a href="https://github.com/JHeroGR" class="btn btn-secondary" type="button">GitHub</a>
+                                <a href="../assets/coder_resume2024.png" class="btn btn-secondary" type="button" download>Download Resume</a>
                             </div>
 
                         </div>
