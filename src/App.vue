@@ -1,6 +1,6 @@
 <template>
-<i v-if=isDark class="bi bi-toggle-off" @click="toggleDark()" style="font-weight:bold; font-size:xx-large;"></i>
-<i v-else class="bi bi-toggle-on" @click="toggleDark()" style="font-weight:bold; font-size:xx-large;"></i>
+<i v-if=isDark class="bi bi-toggle-off" @click="toggleDark()" style="font-weight:bold; font-size:xx-large;"><i class="bi bi-moon-fill"></i></i>
+<i v-else class="bi bi-toggle-on" @click="toggleDark()" style="font-weight:bold; font-size:xx-large;"><i class="bi bi-brightness-high-fill"></i></i>
   <router-view v-slot="{ Component, route }">
     <transition name="slide" mode="out-in">
       <div :key="route.name">  
@@ -29,6 +29,9 @@ const toggleDark = useToggle(isDark);
 }
 .slide-enter-active, .slide-leave-active {
   transition: 0.5s ease-out;
+}
+i {
+  margin-left: 10px;
 }
 .dark {
   background: #16171d; 
