@@ -5,9 +5,9 @@
       <p>Feel free to explore who I am and what I love doing!</p>
       
       
-      <RouterLink to="/actor" class="btn btn-primary btn-lg btn-block">Actor Resume</RouterLink>
-      <RouterLink to="/gamer" class="btn btn-danger btn-lg btn-block">Gamer Things</RouterLink>
-      <RouterLink to="/coder" class="btn btn-warning btn-lg btn-block">Coder Portfolio</RouterLink>
+      <RouterLink to="/actor" class="btn btn-primary">Actor Resume</RouterLink>
+      <RouterLink to="/gamer" class="btn btn-danger">Gamer Things</RouterLink>
+      <RouterLink to="/coder" class="btn btn-warning">Coder Portfolio</RouterLink>
 
     </div>
 </template>
@@ -27,6 +27,22 @@ export default {
 }
 .btn {
   margin-bottom: 5%;
-  margin-left: 5%;
+  margin-left: 5%; 
+  padding: 2%;
+  border-radius: 5%;
+  text-decoration: none;
+  color: white;
+}
+.btn:hover {
+  opacity: 0.5;
+}
+.btn-danger {
+  background: #dc3545;
+}
+.btn-primary {
+  background: #007bff;
+}
+.btn-warning {
+  background: #ffc107;
 }
 </style>

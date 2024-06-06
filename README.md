@@ -5,20 +5,21 @@ My personal website showcasing my skills as an Actor, content as a Gamer, and pr
 ### This README contains timestamps of each feature that was added/removed/upgraded.
 
 ## What This Project is Composed of...
-- VueJS <img src='https://static-00.iconduck.com/assets.00/vue-js-icon-512x442-k8qh9h45.png' alt="VueJS" width="15px"/>
-- Vue Router <img src='https://user-images.githubusercontent.com/7110136/29002858-a09570d2-7ab4-11e7-8faa-5dd6d4458b0d.png' alt='Vue Router' width='15px' />
+- VueJS
+- Vue Router
 - Vue3 Carousel
-- Firebase <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Firebase_icon.svg/1200px-Firebase_icon.svg.png' alt='Firebase' width='15px' />
-- RealTime Database <img src='https://firebase.google.com/static/images/products/icons/build_realtime_database.svg' alt='RealTime Database' width='15px'/>
-- HTML5 <img src='https://cdn-icons-png.flaticon.com/512/732/732212.png' alt='HTML5' width='15px'/>
-- CSS3 <img src='https://cdn-icons-png.flaticon.com/512/732/732190.png' alt='CSS3' width='15px' />
+- VueUse
+- Firebase
+- RealTime Database
+- HTML5
+- CSS3
+- Bootstrap Icons
 
 
 ## TODO
 - contact form functionality
 - modal alertbox 
 - firebase - storage (for images)?
-- dark and light 
 
 
 ## DONE
@@ -36,3 +37,4 @@ My personal website showcasing my skills as an Actor, content as a Gamer, and pr
 - finished reading from databases - **June 4**
 - added slide-in/slide-out animation - **June 4**
 - deployment to live server - **June 4**
+- removed bootstrap css, only kept bootstrap icons, added dark and light toggle - **June 6**

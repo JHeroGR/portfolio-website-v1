@@ -2,15 +2,11 @@
   <h1>JHero</h1>
   <h3>Actor | Gamer | Coder</h3>
 
-  <div class="row">
-    <div class="col-md-6">
-      <Main />
-    </div>
-    <div class="col-md-6">
-      <Talents />
-    </div>
-  </div>
 
+      <Main />
+
+      <Talents />
+    
     <Updates />
     
     <Contact />

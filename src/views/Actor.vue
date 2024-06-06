@@ -1,7 +1,7 @@
 <template>
-    <div class="main bg-primary">
+    <div class="main">
         <div class="container">
-            <router-link to="/"><i class="bi bi-chevron-left" style="color: black;font-weight: bold;font-size:xx-large;"></i></router-link>
+            <router-link to="/"><i class="bi bi-chevron-left" style="font-weight: bold;font-size:xx-large;"></i></router-link>
             <h1>JHero</h1>
             <h3>Actor</h3>
             <div class="row">
