@@ -37,4 +37,4 @@ My personal website showcasing my skills as an Actor, content as a Gamer, and pr
 - finished reading from databases - **June 4**
 - added slide-in/slide-out animation - **June 4**
 - deployment to live server - **June 4**
-- removed bootstrap css, only kept bootstrap icons, added dark and light toggle - **June 6**
+- removed bootstrap css, only kept bootstrap icons, added dark and light toggle (vueuse) - **June 6**
